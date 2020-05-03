@@ -35,7 +35,7 @@
      update existing fn to register log entries
      display the log of events
      
-     display list of categories (unique cats)
+     display list of categories (unique catss)
 
 """
 
