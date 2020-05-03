@@ -2,7 +2,7 @@ import os
 
 def menu():
     print('\n\n')
-    print('-' * 70)
+    print('_' * 70)
     print('   Warehouse Control')
     print('-' * 70)
 
@@ -14,6 +14,8 @@ def menu():
     print(' [6] Remove item')
     print(' [7] Register sale')
     print(' [8] Display log')
+    print('\n\n')
+    
     
     
 

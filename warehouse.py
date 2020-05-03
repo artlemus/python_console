@@ -45,7 +45,6 @@ import pickle
 import datetime
 
 
-
 #  global vars
 catalog = []
 log = []
@@ -112,21 +111,20 @@ def get_current_time():
 
 
 def add_log_event(event_type, event_description):
-    entry = get_current_time() + '|  ' + event_type.ljust(10)+' | ' + event_description
+    entry = get_current_time() + '|  ' + event_type.ljust(10) + \
+        ' | ' + event_description
     log.append(entry)
     save_log()
+
 
 def print_log():
     header('Log of events')
     for entry in log:
         print(entry)
 
-    
-
 
 
 # functions
-
 
 
 def register_item():
@@ -209,12 +207,13 @@ def update_stock(opc):
                 stock = int(input('New stock value: '))
                 item.stock = stock
                 print('stock updated!')
-                add_log_event('SetStock','Updated stock for item: ' + str(item.id))
+                add_log_event(
+                    'SetStock', 'Updated stock for item: ' + str(item.id))
             else:
                 sold = int(input('Number of items to sell: '))
                 item.stock -= sold
                 print('Sale registered')
-                add_log_event('Sale',+str(sold) +'items of item: ' + str(item.id))
+                add_log_event('Sale' , 'items sold: ' +str(sold))
 
             print('Stock updated!')
     if(not found):
@@ -237,11 +236,11 @@ def remove_item():
         if(item.id == id):
             catalog.remove(item)
             found = True
-            add_log_event('Remove','Removed item: ' + str(item.id))
+            add_log_event('Remove', 'Removed item: ' + str(item.id))
             break
     if(found):
         print('item removed from catalog')
-        
+
     else:
         print('** Error: selected id is incorrect, try again!')
 
@@ -282,7 +281,6 @@ while (opc != 'x'):
         save_catalog()
     elif(opc == '8'):
         print_log()
-
 
     input('Press Enter to continue...')
     clear()
