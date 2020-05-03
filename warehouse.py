@@ -44,6 +44,8 @@ from item import Item
 import pickle
 import datetime
 
+
+
 #  global vars
 catalog = []
 log = []
