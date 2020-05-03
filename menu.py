@@ -9,6 +9,12 @@ def menu():
     print(' [1] Register Items')
     print(' [2] Display Catalog')
     print(' [3] Display out of stock')
+    print(' [4] Update item stock')
+    print(' [5] Calculate stock value')
+    print(' [6] Remove item')
+    print(' [7] Register sale')
+    print(' [8] Display log')
+    
     
 
 
