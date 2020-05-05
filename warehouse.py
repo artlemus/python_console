@@ -123,9 +123,11 @@ def print_log():
         print(entry)
 
 
-
 # functions
 
+
+   
+        
 
 def register_item():
     global last_id
@@ -144,6 +146,7 @@ def register_item():
     new_item.stock = stock
 
     catalog.append(new_item)
+    category.append(new_item)
     add_log_event('New Item', 'Added: ' + str(last_id))
 
     print("Item created!")
@@ -213,7 +216,7 @@ def update_stock(opc):
                 sold = int(input('Number of items to sell: '))
                 item.stock -= sold
                 print('Sale registered')
-                add_log_event('Sale' , 'items sold: ' +str(sold))
+                add_log_event('Sale', 'items sold: ' + str(sold))
 
             print('Stock updated!')
     if(not found):
@@ -281,6 +284,7 @@ while (opc != 'x'):
         save_catalog()
     elif(opc == '8'):
         print_log()
+    
 
     input('Press Enter to continue...')
     clear()
