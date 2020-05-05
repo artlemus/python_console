@@ -14,6 +14,7 @@ def menu():
     print(' [6] Remove item')
     print(' [7] Register sale')
     print(' [8] Display log')
+    print(' [9] Categories')
     print('\n\n')
     
     
@@ -29,4 +30,4 @@ def header(title):
     print('-'*70)
 
 def clear():
-    return os.system('cls')
+    return  os.system('cls' if os.name=='nt' else 'clear')

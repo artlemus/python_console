@@ -40,7 +40,7 @@
 """
 
 from menu import menu, clear, header
-from item import Item
+from item import Item, Cat
 import pickle
 import datetime
 
@@ -123,7 +123,6 @@ def print_log():
         print(entry)
 
 
-
 # functions
 
 
@@ -136,6 +135,7 @@ def register_item():
     stock = int(input('New item stock: '))
 
     new_item = Item()  # <- how you create instances of a class (objects)
+
     last_id += 1  # no last_id ++
     new_item.id = last_id
     new_item.title = title
@@ -213,7 +213,7 @@ def update_stock(opc):
                 sold = int(input('Number of items to sell: '))
                 item.stock -= sold
                 print('Sale registered')
-                add_log_event('Sale' , 'items sold: ' +str(sold))
+                add_log_event('Sale', 'items sold: ' + str(sold))
 
             print('Stock updated!')
     if(not found):
@@ -243,6 +243,24 @@ def remove_item():
 
     else:
         print('** Error: selected id is incorrect, try again!')
+
+def list_categories():
+    size = len(catalog)
+    header('Current Categories (' + str(size) + ' items)')
+
+    print(
+        '|' + ' Categories'.ljust(1) + '|')
+    print('-'*70)
+
+    cat_list = []
+
+    for item in catalog:
+        if item.category not in cat_list:
+            cat_list.append(item.category)
+            print(item.category.ljust(15))
+
+    print('-' * 70)
+        
 
 
 # instructions
@@ -281,6 +299,8 @@ while (opc != 'x'):
         save_catalog()
     elif(opc == '8'):
         print_log()
+    elif(opc == '9'):
+        list_categories()
 
     input('Press Enter to continue...')
     clear()
