@@ -6,3 +6,6 @@ class Item:
     category = ''
     price = 0.0
     stock = 0
+
+class Cat:
+    category = ''

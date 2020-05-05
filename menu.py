@@ -30,4 +30,4 @@ def header(title):
     print('-'*70)
 
 def clear():
-    return os.system('cls')
+    return  os.system('cls' if os.name=='nt' else 'clear')
